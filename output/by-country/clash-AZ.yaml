@@ -4,26 +4,23 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇨🇿 捷克 (Czech) 01 - xiaohe
-  server: 194.87.59.6
-  port: 2085
+- name: 🇦🇿 阿塞拜疆 (Azerbaijan) 01 - xiaohe
+  server: basalam.horqen.ir
+  port: 21289
   udp: true
   type: vless
-  uuid: c9373ff0-c263-4949-885f-366671f3c6a1
-  network: grpc
-  grpc-opts:
-    grpc-service-name: vless
+  uuid: c12db015-a63c-43e5-a744-6398a90373b5
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇨🇿 捷克 (Czech) 01 - xiaohe
+  - 🇦🇿 阿塞拜疆 (Azerbaijan) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇨🇿 捷克 (Czech) 01 - xiaohe
+  - 🇦🇿 阿塞拜疆 (Azerbaijan) 01 - xiaohe
 rules:
 - MATCH,PROXIES
