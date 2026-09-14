@@ -53,6 +53,7 @@ except ImportError as e:
 # ══════════════════════════════════════════════════════════════════
 
 SOURCE_URLS = [
+    # 原有来源
     "https://wild-cloud-9893.heleimail.workers.dev",
     "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
     "https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt",
@@ -63,6 +64,12 @@ SOURCE_URLS = [
     "https://raw.githubusercontent.com/freefq/free/master/v2",
     "https://open.heleimail.workers.dev/",
     "https://www.ermao.net/sub/v2ray/ermao.net",
+
+    # 新增来源：均交给本项目自己的去重、测活、家宽判定再次筛选
+    "https://735754647.github.io/Free-Nodes/v2ray-raw.txt",
+    "https://raw.githubusercontent.com/wzmwayne/proxy-node/main/output/aio/clash.yaml",
+    "https://raw.githubusercontent.com/Ruk1ng001/freeSub/main/v2ray",
+    "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/best.txt",
 ]
 
 OUTPUT_DIR = "output"
@@ -947,11 +954,131 @@ def parse_node_uri(uri: str):
     return None
 
 
+def _clash_proxy_to_uri(p: dict) -> str | None:
+    """将常见 Clash/Mihomo proxy 字典转换成标准 URI，便于复用现有解析器。"""
+    if not isinstance(p, dict):
+        return None
+    typ = str(p.get("type", "")).lower().strip()
+    host = str(p.get("server", "")).strip()
+    port = p.get("port")
+    name = urllib.parse.quote(str(p.get("name", "")), safe="")
+    if not host or not str(port).isdigit():
+        return None
+    port = int(port)
+
+    def q(params):
+        return urllib.parse.urlencode({k: v for k, v in params.items() if v not in (None, "", [])}, doseq=True)
+
+    tls = p.get("tls", False)
+    sni = p.get("servername") or p.get("sni") or ""
+    skip = p.get("skip-cert-verify", False)
+    network = p.get("network") or ""
+    ws = p.get("ws-opts") or {}
+    grpc = p.get("grpc-opts") or {}
+
+    if typ == "vless":
+        uid = str(p.get("uuid", "")).strip()
+        if not uid:
+            return None
+        params = {"type": network or "tcp"}
+        if tls:
+            params["security"] = "tls"
+            if sni: params["sni"] = sni
+            if skip: params["allowInsecure"] = "1"
+        ro = p.get("reality-opts") or {}
+        if ro:
+            params["security"] = "reality"
+            if sni: params["sni"] = sni
+            if ro.get("public-key"): params["pbk"] = ro.get("public-key")
+            if ro.get("short-id"): params["sid"] = ro.get("short-id")
+        if p.get("flow"): params["flow"] = p["flow"]
+        if network == "ws":
+            if ws.get("path"): params["path"] = ws.get("path")
+            headers = ws.get("headers") or {}
+            if headers.get("Host"): params["host"] = headers.get("Host")
+        elif network in ("grpc", "gun"):
+            if grpc.get("grpc-service-name"): params["serviceName"] = grpc.get("grpc-service-name")
+        return f"vless://{urllib.parse.quote(uid, safe='')}@{host}:{port}?{q(params)}#{name}"
+
+    if typ == "vmess":
+        data = {
+            "v": "2", "ps": urllib.parse.unquote(name), "add": host, "port": str(port),
+            "id": str(p.get("uuid", "")), "aid": str(p.get("alterId", p.get("alter-id", 0)) or 0),
+            "net": network or "tcp", "type": str(p.get("type", "none")),
+            "tls": "tls" if tls else "none",
+        }
+        if sni: data["sni"] = sni
+        if network == "ws":
+            if ws.get("path"): data["path"] = ws.get("path")
+            headers = ws.get("headers") or {}
+            if headers.get("Host"): data["host"] = headers.get("Host")
+        elif network in ("grpc", "gun") and grpc.get("grpc-service-name"):
+            data["path"] = grpc.get("grpc-service-name")
+        return "vmess://" + base64.b64encode(json.dumps(data, ensure_ascii=False, separators=(",", ":")).encode()).decode()
+
+    if typ == "trojan":
+        password = str(p.get("password", ""))
+        if not password: return None
+        params = {"sni": sni, "allowInsecure": "1" if skip else "0", "type": network or "tcp"}
+        if network == "ws":
+            if ws.get("path"): params["path"] = ws.get("path")
+            headers = ws.get("headers") or {}
+            if headers.get("Host"): params["host"] = headers.get("Host")
+        elif network in ("grpc", "gun") and grpc.get("grpc-service-name"):
+            params["serviceName"] = grpc.get("grpc-service-name")
+        return f"trojan://{urllib.parse.quote(password, safe='')}@{host}:{port}?{q(params)}#{name}"
+
+    if typ in ("ss", "shadowsocks"):
+        method, password = str(p.get("cipher", "")), str(p.get("password", ""))
+        if not method or not password: return None
+        user = base64.urlsafe_b64encode(f"{method}:{password}".encode()).decode().rstrip("=")
+        return f"ss://{user}@{host}:{port}#{name}"
+
+    if typ in ("hysteria2", "hy2"):
+        auth = str(p.get("password", p.get("auth", "")))
+        if not auth: return None
+        params = {"sni": sni, "insecure": "1" if skip else "0"}
+        if p.get("obfs") and p.get("obfs") != "none":
+            params["obfs"] = p.get("obfs")
+            op = p.get("obfs-password") or (p.get("obfs-opts") or {}).get("password")
+            if op: params["obfs-password"] = op
+        return f"hy2://{urllib.parse.quote(auth, safe='')}@{host}:{port}?{q(params)}#{name}"
+
+    if typ == "tuic":
+        uid, password = str(p.get("uuid", "")), str(p.get("password", ""))
+        if not uid or not password: return None
+        params = {"sni": sni, "alpn": ",".join(p.get("alpn", []) or []), "allow_insecure": "1" if skip else "0"}
+        return f"tuic://{urllib.parse.quote(uid, safe='')}:{urllib.parse.quote(password, safe='')}@{host}:{port}?{q(params)}#{name}"
+
+    if typ == "anytls":
+        password = str(p.get("password", ""))
+        if not password: return None
+        params = {"sni": sni, "insecure": "1" if skip else "0"}
+        return f"anytls://{urllib.parse.quote(password, safe='')}@{host}:{port}?{q(params)}#{name}"
+    return None
+
+
 def extract_nodes_from_text(text: str) -> set:
     results = set()
     if not text:
         return results
     probe = text.strip()
+
+    # 支持 Clash/Mihomo YAML 聚合源（例如 wzmwayne/proxy-node AIO）。
+    # 仅在明显包含 proxies 字段时解析，避免对普通 Base64 文本做昂贵 YAML 解析。
+    if "proxies:" in probe[:20000] or probe.startswith("proxies:"):
+        try:
+            data = yaml.safe_load(probe)
+            if isinstance(data, dict) and isinstance(data.get("proxies"), list):
+                for proxy in data["proxies"]:
+                    uri = _clash_proxy_to_uri(proxy)
+                    if uri and len(uri) > 12:
+                        results.add(uri)
+                if results:
+                    return results
+        except Exception as e:
+            print(f"[!] Clash YAML 解析失败: {str(e)[:100]}")
+
     # 最多三层 base64 解包 (订阅常见整体 base64)
     for _ in range(3):
         if any(p in probe for p in ("vmess://", "vless://", "ss://", "trojan://",
@@ -961,7 +1088,6 @@ def extract_nodes_from_text(text: str) -> set:
         if not decoded or decoded == probe:
             break
         probe = decoded
-    # 直接文本也可能混杂 base64 行
     lines_blob = probe
     pattern = (r'((?:vmess|vless|trojan|ss|hy2|hysteria2|tuic|anytls|ssh)://'
                r'[^\s"\'<>\\]+)')
@@ -972,13 +1098,16 @@ def extract_nodes_from_text(text: str) -> set:
     return results
 
 
+SOURCE_STATS = {}
+
 def fetch_raw_nodes() -> list:
     nodes = set()
-    print("[*] 抓取全部订阅源 ...")
+    global SOURCE_STATS
+    SOURCE_STATS = {}
+    print(f"[*] 抓取全部订阅源 ({len(SOURCE_URLS)} 个) ...")
 
     def _fetch(url):
         last_err = None
-        # 重试 2 次 (网络抖动/GFW 间歇性重置; 退避 3s)
         for attempt in range(3):
             try:
                 r = http_get(url, timeout=30)
@@ -996,12 +1125,25 @@ def fetch_raw_nodes() -> list:
         futs = [ex.submit(_fetch, u) for u in SOURCE_URLS]
         for f in as_completed(futs):
             url, got, err = f.result()
+            SOURCE_STATS[url] = {"fetched": len(got), "status": "ok" if not err else "error", "error": err or ""}
             if err:
                 print(f"[!] 拉取失败 {url} → {err}")
             else:
                 print(f"[+] {url} → {len(got)} 节点")
             nodes.update(got)
+
+    stats_path = os.path.join(OUTPUT_DIR, "source-stats.json")
+    try:
+        with open(stats_path, "w", encoding="utf-8") as f:
+            json.dump({"source_count": len(SOURCE_URLS), "sources": SOURCE_STATS}, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"[!] 无法写入来源统计: {e}")
+
     print(f"[*] 初始抓取总量: {len(nodes)}")
+    print("[*] 来源抓取统计:")
+    for url in SOURCE_URLS:
+        st = SOURCE_STATS.get(url, {})
+        print(f"    {st.get('fetched', 0):>5} | {st.get('status', 'unknown'):>7} | {url}")
     return list(nodes)
 
 
@@ -2328,16 +2470,6 @@ def update_readme(total_count, res_count):
     res_table = table_rows(res_counts, "residential-by-country")
     normal_table = table_rows(normal_counts, "by-country")
 
-    # 全部家宽统一订阅：仅汇总本次运行筛选出的家宽节点，不保存历史数据。
-    residential_links = {
-        "v2ray": f"https://cdn.jsdelivr.net/gh/{repo_name}@main/output/residential.txt",
-        "clash": f"https://cdn.jsdelivr.net/gh/{repo_name}@main/output/residential-clash.yaml",
-        "singbox": f"https://cdn.jsdelivr.net/gh/{repo_name}@main/output/residential-singbox.json",
-        "v2ray_raw": f"https://raw.githubusercontent.com/{repo_name}/main/output/residential.txt",
-        "clash_raw": f"https://raw.githubusercontent.com/{repo_name}/main/output/residential-clash.yaml",
-        "singbox_raw": f"https://raw.githubusercontent.com/{repo_name}/main/output/residential-singbox.json",
-    }
-
     readme = f"""# 🚀 免费节点自动测活订阅池 (含真实家宽/住宅IP甄选)
 
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`
@@ -2353,28 +2485,6 @@ def update_readme(total_count, res_count):
 | 🚀 **Clash (YAML 格式)** | `{total_count}` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/clash.yaml) | [官方 Raw 直链](https://raw.githubusercontent.com/{repo_name}/main/output/clash.yaml) |
 | ⚡ **V2RayN (Base64 格式)** | `{total_count}` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/v2ray.txt) | [官方 Raw 直链](https://raw.githubusercontent.com/{repo_name}/main/output/v2ray.txt) |
 | 📦 **sing-box (JSON 格式)** | `{total_count}` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/singbox.json) | [官方 Raw 直链](https://raw.githubusercontent.com/{repo_name}/main/output/singbox.json) |
-
----
-
-## 🏠 全部家宽统一订阅
-
-> **本订阅仅包含本次运行筛选出的全部家宽/移动家宽节点，不区分国家，也不保留历史节点。每次 GitHub Actions 运行都会直接覆盖为最新结果。**
-
-| 客户端 / 格式 | 本次家宽节点数 | CDN 订阅直链 | Raw 直链 |
-| :--- | :---: | :--- | :--- |
-| ⚡ **V2RayN / V2RayNG (Base64)** | `{res_count}` | [CDN 直链]({residential_links["v2ray"]}) | [Raw 直链]({residential_links["v2ray_raw"]}) |
-| 🚀 **Clash / Mihomo (YAML)** | `{res_count}` | [CDN 直链]({residential_links["clash"]}) | [Raw 直链]({residential_links["clash_raw"]}) |
-| 📦 **sing-box (JSON)** | `{res_count}` | [CDN 直链]({residential_links["singbox"]}) | [Raw 直链]({residential_links["singbox_raw"]}) |
-
-### ⭐ 推荐
-
-如果你使用 **Mihomo Party / Clash**，直接订阅：
-
-`{residential_links["clash"]}`
-
-如果你使用 **v2RayN / v2RayNG**，直接订阅：
-
-`{residential_links["v2ray"]}`
 
 ---
 
@@ -2459,7 +2569,7 @@ export default {{
 ---
 
 ## 🛠️ 项目使用说明
-1. **自动更新机制**：GitHub Actions 每 6 小时全自动运行并刷新上述全部订阅与数据。
+1. **自动更新机制**：GitHub Actions 每 4 小时全自动运行并刷新上述全部订阅与数据。
 2. **测活标准**：节点必须通过 ① 端口预检 ② sing-box 实际隧道 3 个 generate_204 探测 ③ 真实出口 IP 穿透获取 ④ Cloudflare 5MB 限时下载 (吞吐 ≥ 70KB/s) ⑤ TLS 证书校验非 MITM, 方可入库。
 3. **多客户端兼容**：Clash / v2rayN / sing-box 全格式订阅。
 """
