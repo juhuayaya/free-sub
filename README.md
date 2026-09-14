@@ -16,6 +16,30 @@
 
 ---
 
+## 🏠 全部家宽统一订阅
+
+> **仅包含本次运行筛选出的全部家宽/移动家宽节点，不区分国家，也不保留历史节点。每次 GitHub Actions 运行都会覆盖为最新结果。**
+
+| 客户端 / 格式 | 当前节点数 | 订阅地址 |
+| :--- | :---: | :--- |
+| 🚀 **Clash / Mihomo** | `6` | `https://cdn.jsdelivr.net/gh/juhuayaya/free-sub@main/output/residential-clash.yaml` |
+| ⚡ **V2RayN / V2RayNG** | `6` | `https://cdn.jsdelivr.net/gh/juhuayaya/free-sub@main/output/residential.txt` |
+| 📦 **sing-box** | `6` | `https://cdn.jsdelivr.net/gh/juhuayaya/free-sub@main/output/residential-singbox.json` |
+
+> 当前示例仓库数据中共有 6 个家宽节点；实际数量会随每次自动运行更新。
+
+### 推荐订阅
+
+**Mihomo Party / Clash：**
+
+`https://cdn.jsdelivr.net/gh/juhuayaya/free-sub@main/output/residential-clash.yaml`
+
+**v2RayN / v2RayNG：**
+
+`https://cdn.jsdelivr.net/gh/juhuayaya/free-sub@main/output/residential.txt`
+
+---
+
 ## 🏠 按照家宽分类节点订阅 (住宅 IP 专区)
 
 > 家宽判定六重信号: ① ip-api.com `hosting` 字段 ② `mobile` 移动网络字段 ③ Cloudflare/主流 CDN Anycast 网段比对 ④ MaxMind GeoLite2 ASN 白/黑名单 (覆盖 60+ 国家主流民用运营商) ⑤ rDNS/ISP 名称特征 ⑥ Scamalytics 风控评分复核 (fraud ≥75 降级、≥90 剔除)。排除所有云主机/数据中心/CDN 任播, 保留真实民用宽带与移动网络。
