@@ -5,18 +5,7 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇿 捷克 (Czech) 01 - xiaohe
-  server: c0yr9j09y2l9g0td8wa5.2whbrirhjgslm43zjcqei.workers.dev
-  port: 443
-  udp: true
-  type: trojan
-  password: -wb.oDfOeHifTGMVEf
-  sni: c0YR9J09y2l9G0Td8WA5.2whBRirhjgsLm43ZJcqei.WoRKers.DEv
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /tr/CRGrZTTVLMALBJkE4?ed=2560
-- name: 🇨🇿 捷克 (Czech) 02 - xiaohe
-  server: 194.87.59.17
+  server: 194.87.59.12
   port: 2085
   udp: true
   type: vless
@@ -24,8 +13,8 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: vless
-- name: 🇨🇿 捷克 (Czech) 03 - xiaohe
-  server: 194.87.59.12
+- name: 🇨🇿 捷克 (Czech) 02 - xiaohe
+  server: 194.87.59.17
   port: 2085
   udp: true
   type: vless
@@ -40,7 +29,6 @@ proxy-groups:
   - AUTO
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
   - 🇨🇿 捷克 (Czech) 02 - xiaohe
-  - 🇨🇿 捷克 (Czech) 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -48,6 +36,5 @@ proxy-groups:
   proxies:
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
   - 🇨🇿 捷克 (Czech) 02 - xiaohe
-  - 🇨🇿 捷克 (Czech) 03 - xiaohe
 rules:
 - MATCH,PROXIES
