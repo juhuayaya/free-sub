@@ -5,22 +5,24 @@
   "outbounds": [
     {
       "type": "vless",
-      "tag": "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
-      "server": "dlbgwqqngrjbwan.jiedddym.com",
-      "server_port": 42868,
-      "uuid": "6dbb8854-17a5-4684-b930-c11f022975ec",
-      "flow": "xtls-rprx-vision",
+      "tag": "🇮🇶 IQ 01 - xiaohe",
+      "server": "188.114.97.6",
+      "server_port": 2053,
+      "uuid": "d4d2d3f3-9dec-4e8f-8daf-145ecac96e66",
       "tls": {
         "enabled": true,
-        "server_name": "www.apple.com",
+        "server_name": "cRIMSON-LeAf-7E45.hzhdUuEBFjDCB.workERs.DEv",
+        "insecure": false,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "GLtdhq3ZSKYlJv62ye5dFKfjI3UF9mBIGOl5ms75rVA",
-          "short_id": "747a75eb5ecef8"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/eyJqdW5rIjoiODgwQ1AwWDV0MnFTRWE1cCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=",
+        "headers": {
+          "Host": "crimson-leaf-7e45.hzhduuebfjdcb.workers.dev"
         }
       }
     },
@@ -29,14 +31,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe"
+        "🇮🇶 IQ 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe"
+        "🇮🇶 IQ 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
