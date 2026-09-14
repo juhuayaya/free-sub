@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-09-14T07:07:34.116103+00:00",
+  "raw_sources_nodes": 8111,
+  "parsed_candidates": 5069,
+  "tested_candidates": 5069,
+  "test_results": 3308,
+  "final_nodes": 4,
+  "residential_nodes": 4,
+  "new_nodes": 4,
+  "disappeared_nodes": 0,
+  "protocol_stats": {
+    "vless": {
+      "tested": 798,
+      "success": 402,
+      "success_rate": 50.4
+    },
+    "vmess": {
+      "tested": 55,
+      "success": 33,
+      "success_rate": 60.0
+    },
+    "hysteria2": {
+      "tested": 134,
+      "success": 128,
+      "success_rate": 95.5
+    },
+    "shadowsocks": {
+      "tested": 222,
+      "success": 198,
+      "success_rate": 89.2
+    },
+    "trojan": {
+      "tested": 59,
+      "success": 39,
+      "success_rate": 66.1
+    },
+    "anytls": {
+      "tested": 2,
+      "success": 2,
+      "success_rate": 100.0
+    }
+  },
+  "new_node_ids": [
+    "6d723348881d07796ecf38a71132083a7fd7f228",
+    "aa41136e3fb5a3cc8fa0f197df703cb31cf7a26a",
+    "b786f1d4cf7113922bc7bde3d4a53bd4bda85b5b",
+    "d7bba783245501034c425344d44a0a85b23d07f6"
+  ],
+  "disappeared_node_ids": []
+}
