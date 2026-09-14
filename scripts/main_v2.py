@@ -2328,6 +2328,16 @@ def update_readme(total_count, res_count):
     res_table = table_rows(res_counts, "residential-by-country")
     normal_table = table_rows(normal_counts, "by-country")
 
+    # 全部家宽统一订阅：仅汇总本次运行筛选出的家宽节点，不保存历史数据。
+    residential_links = {
+        "v2ray": f"https://cdn.jsdelivr.net/gh/{repo_name}@main/output/residential.txt",
+        "clash": f"https://cdn.jsdelivr.net/gh/{repo_name}@main/output/residential-clash.yaml",
+        "singbox": f"https://cdn.jsdelivr.net/gh/{repo_name}@main/output/residential-singbox.json",
+        "v2ray_raw": f"https://raw.githubusercontent.com/{repo_name}/main/output/residential.txt",
+        "clash_raw": f"https://raw.githubusercontent.com/{repo_name}/main/output/residential-clash.yaml",
+        "singbox_raw": f"https://raw.githubusercontent.com/{repo_name}/main/output/residential-singbox.json",
+    }
+
     readme = f"""# 🚀 免费节点自动测活订阅池 (含真实家宽/住宅IP甄选)
 
 > 👤 **定制规范命名**: 所有订阅节点均重命名为 `国旗 地区 序号 (家宽) - xiaohe`
@@ -2343,6 +2353,28 @@ def update_readme(total_count, res_count):
 | 🚀 **Clash (YAML 格式)** | `{total_count}` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/clash.yaml) | [官方 Raw 直链](https://raw.githubusercontent.com/{repo_name}/main/output/clash.yaml) |
 | ⚡ **V2RayN (Base64 格式)** | `{total_count}` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/v2ray.txt) | [官方 Raw 直链](https://raw.githubusercontent.com/{repo_name}/main/output/v2ray.txt) |
 | 📦 **sing-box (JSON 格式)** | `{total_count}` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/singbox.json) | [官方 Raw 直链](https://raw.githubusercontent.com/{repo_name}/main/output/singbox.json) |
+
+---
+
+## 🏠 全部家宽统一订阅
+
+> **本订阅仅包含本次运行筛选出的全部家宽/移动家宽节点，不区分国家，也不保留历史节点。每次 GitHub Actions 运行都会直接覆盖为最新结果。**
+
+| 客户端 / 格式 | 本次家宽节点数 | CDN 订阅直链 | Raw 直链 |
+| :--- | :---: | :--- | :--- |
+| ⚡ **V2RayN / V2RayNG (Base64)** | `{res_count}` | [CDN 直链]({residential_links["v2ray"]}) | [Raw 直链]({residential_links["v2ray_raw"]}) |
+| 🚀 **Clash / Mihomo (YAML)** | `{res_count}` | [CDN 直链]({residential_links["clash"]}) | [Raw 直链]({residential_links["clash_raw"]}) |
+| 📦 **sing-box (JSON)** | `{res_count}` | [CDN 直链]({residential_links["singbox"]}) | [Raw 直链]({residential_links["singbox_raw"]}) |
+
+### ⭐ 推荐
+
+如果你使用 **Mihomo Party / Clash**，直接订阅：
+
+`{residential_links["clash"]}`
+
+如果你使用 **v2RayN / v2RayNG**，直接订阅：
+
+`{residential_links["v2ray"]}`
 
 ---
 
