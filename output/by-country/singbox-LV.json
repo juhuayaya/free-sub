@@ -15,17 +15,30 @@
       "type": "shadowsocks",
       "tag": "🇱🇻 拉脱维亚 (Latvia) 02 - xiaohe",
       "server": "185.135.86.175",
-      "server_port": 9007,
-      "method": "aes-256-cfb",
-      "password": "kSPmvwdFzGMMW5pY"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇱🇻 拉脱维亚 (Latvia) 03 - xiaohe",
-      "server": "185.135.86.175",
       "server_port": 9068,
       "method": "aes-256-cfb",
       "password": "mwgRg9hRq3b4Qnwb"
+    },
+    {
+      "type": "vless",
+      "tag": "🇱🇻 拉脱维亚 (Latvia) 03 - xiaohe",
+      "server": "131.123.25.4",
+      "server_port": 443,
+      "uuid": "4360f941-b541-01ac-8507-2de3763e0cfd",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "fr.convert-flow.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "8ZYjmjb0b2QJKCGMrcdhQNV28jZZPCKgIQbIdqChQ0w",
+          "short_id": "00a61d55a07de885"
+        }
+      }
     },
     {
       "type": "shadowsocks",
@@ -36,6 +49,22 @@
       "password": "UTJA57ypk2XKQpnm"
     },
     {
+      "type": "shadowsocks",
+      "tag": "🇱🇻 拉脱维亚 (Latvia) 05 - xiaohe",
+      "server": "185.135.86.175",
+      "server_port": 9007,
+      "method": "aes-256-cfb",
+      "password": "kSPmvwdFzGMMW5pY"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇱🇻 拉脱维亚 (Latvia) 06 - xiaohe",
+      "server": "185.135.86.175",
+      "server_port": 9082,
+      "method": "aes-256-cfb",
+      "password": "45xgMgm386pjWjTx"
+    },
+    {
       "type": "selector",
       "tag": "select",
       "outbounds": [
@@ -43,7 +72,9 @@
         "🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe",
         "🇱🇻 拉脱维亚 (Latvia) 02 - xiaohe",
         "🇱🇻 拉脱维亚 (Latvia) 03 - xiaohe",
-        "🇱🇻 拉脱维亚 (Latvia) 04 - xiaohe"
+        "🇱🇻 拉脱维亚 (Latvia) 04 - xiaohe",
+        "🇱🇻 拉脱维亚 (Latvia) 05 - xiaohe",
+        "🇱🇻 拉脱维亚 (Latvia) 06 - xiaohe"
       ]
     },
     {
@@ -53,7 +84,9 @@
         "🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe",
         "🇱🇻 拉脱维亚 (Latvia) 02 - xiaohe",
         "🇱🇻 拉脱维亚 (Latvia) 03 - xiaohe",
-        "🇱🇻 拉脱维亚 (Latvia) 04 - xiaohe"
+        "🇱🇻 拉脱维亚 (Latvia) 04 - xiaohe",
+        "🇱🇻 拉脱维亚 (Latvia) 05 - xiaohe",
+        "🇱🇻 拉脱维亚 (Latvia) 06 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
