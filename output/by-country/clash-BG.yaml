@@ -14,27 +14,16 @@ proxies:
   ws-opts:
     path: /
 - name: 🇧🇬 保加利亚 (Bulgaria) 02 - xiaohe
-  server: 213.183.63.60
-  port: 9049
+  server: neth9.lunariai.ru
+  port: 8443
   udp: true
-  type: ss
-  cipher: aes-256-cfb
-  password: PRBf4BS2HvJqtWxY
+  type: vless
+  uuid: 9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a
+  tls: true
+  servername: neth9.lunariai.ru
+  skip-cert-verify: false
+  client-fingerprint: chrome
 - name: 🇧🇬 保加利亚 (Bulgaria) 03 - xiaohe
-  server: 213.183.63.60
-  port: 9064
-  udp: true
-  type: ss
-  cipher: aes-256-cfb
-  password: cp8pRSUAyLhTfVWH
-- name: 🇧🇬 保加利亚 (Bulgaria) 04 - xiaohe
-  server: 213.183.63.60
-  port: 9061
-  udp: true
-  type: ss
-  cipher: aes-256-cfb
-  password: 4R3hUfZ2FHhDmNcP
-- name: 🇧🇬 保加利亚 (Bulgaria) 05 - xiaohe
   server: 193.148.59.178
   port: 443
   udp: true
@@ -47,16 +36,21 @@ proxies:
     short-id: e3daad69
   servername: www.apple.com
   client-fingerprint: chrome
-- name: 🇧🇬 保加利亚 (Bulgaria) 06 - xiaohe
-  server: neth9.lunariai.ru
-  port: 8443
+- name: 🇧🇬 保加利亚 (Bulgaria) 04 - xiaohe
+  server: 213.183.63.60
+  port: 9061
   udp: true
-  type: vless
-  uuid: 9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a
-  tls: true
-  servername: neth9.lunariai.ru
-  skip-cert-verify: false
-- name: 🇧🇬 保加利亚 (Bulgaria) 07 - xiaohe
+  type: ss
+  cipher: aes-256-cfb
+  password: 4R3hUfZ2FHhDmNcP
+- name: 🇧🇬 保加利亚 (Bulgaria) 05 - xiaohe
+  server: 213.183.63.60
+  port: 9064
+  udp: true
+  type: ss
+  cipher: aes-256-cfb
+  password: cp8pRSUAyLhTfVWH
+- name: 🇧🇬 保加利亚 (Bulgaria) 06 - xiaohe
   server: 144.31.50.236
   port: 443
   udp: true
@@ -68,7 +62,7 @@ proxies:
     public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
     short-id: bbe46bd8f6b96839
   servername: yandex.ru
-  client-fingerprint: chrome
+  client-fingerprint: firefox
 proxy-groups:
 - name: PROXIES
   type: select
@@ -80,7 +74,6 @@ proxy-groups:
   - 🇧🇬 保加利亚 (Bulgaria) 04 - xiaohe
   - 🇧🇬 保加利亚 (Bulgaria) 05 - xiaohe
   - 🇧🇬 保加利亚 (Bulgaria) 06 - xiaohe
-  - 🇧🇬 保加利亚 (Bulgaria) 07 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -92,6 +85,5 @@ proxy-groups:
   - 🇧🇬 保加利亚 (Bulgaria) 04 - xiaohe
   - 🇧🇬 保加利亚 (Bulgaria) 05 - xiaohe
   - 🇧🇬 保加利亚 (Bulgaria) 06 - xiaohe
-  - 🇧🇬 保加利亚 (Bulgaria) 07 - xiaohe
 rules:
 - MATCH,PROXIES
