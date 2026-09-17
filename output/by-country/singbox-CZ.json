@@ -6,16 +6,13 @@
     {
       "type": "vless",
       "tag": "🇨🇿 捷克 (Czech) 01 - xiaohe",
-      "server": "66.81.247.155",
+      "server": "64.227.67.161",
       "server_port": 2083,
-      "uuid": "6cc29a05-4828-4e48-a34a-20b7ada60e85",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
       "tls": {
         "enabled": true,
-        "server_name": "testmikonim.hydrymhmdamyn7.workers.dev",
-        "insecure": false,
-        "alpn": [
-          "http/1.1"
-        ],
+        "server_name": "cdn8848.776676.xyz",
+        "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -23,9 +20,9 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/OAZko425kNFF0PpQ",
+        "path": "/members/detail/gif?ed=2560",
         "headers": {
-          "Host": "testmikonim.hydrymhmdamyn7.workers.dev"
+          "Host": "cdn8848.776676.xyz"
         }
       }
     },
