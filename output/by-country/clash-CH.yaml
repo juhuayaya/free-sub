@@ -20,21 +20,21 @@ proxies:
   sni: 104.165.205.42
   skip-cert-verify: true
 - name: 🇨🇭 瑞士 (Switzerland) 03 - xiaohe
-  server: 104.165.205.40
-  port: 8443
+  server: 104.165.205.23
+  port: 9443
   udp: true
   type: hysteria2
-  password: 54d2f622-fd71-4f5f-8813-832b68f4ca3b
-  sni: speedtestmark.com
+  password: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
+  sni: onecloudstream.com
   skip-cert-verify: false
 - name: 🇨🇭 瑞士 (Switzerland) 04 - xiaohe
-  server: 140.238.213.114
-  port: 50160
+  server: 104.165.205.81
+  port: 9443
   udp: true
   type: hysteria2
-  password: 84a506ca5aca505696a454d828420b3f
-  sni: www.bing.com
-  skip-cert-verify: true
+  password: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
+  sni: onecloudstream.com
+  skip-cert-verify: false
 - name: 🇨🇭 瑞士 (Switzerland) 05 - xiaohe
   server: 151.242.2.81
   port: 443
