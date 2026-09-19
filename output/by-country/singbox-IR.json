@@ -4,18 +4,33 @@
   },
   "outbounds": [
     {
-      "type": "trojan",
+      "type": "vless",
       "tag": "🇮🇷 IR 01 - xiaohe",
-      "server": "199.232.78.101",
+      "server": "89.110.66.154",
       "server_port": 443,
-      "password": "mitivpn",
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
       "tls": {
         "enabled": true,
-        "server_name": "ssl.fastly.com",
-        "insecure": false,
-        "alpn": [
-          "http/1.1"
-        ],
+        "server_name": "cdn8848.776676.xyz",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "cdn8848.776676.xyz"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇷 IR 02 - xiaohe",
+      "server": "144.31.28.106",
+      "server_port": 8443,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn8848.776676.xyz",
+        "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -23,9 +38,32 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN",
+        "path": "/trade?ed=2560",
         "headers": {
-          "Host": "mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net"
+          "Host": "cdn8848.776676.xyz"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇷 IR 03 - xiaohe",
+      "server": "185.221.223.198",
+      "server_port": 2053,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn8848.776676.xyz",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/go/archive?ed=2560",
+        "headers": {
+          "Host": "cdn8848.776676.xyz"
         }
       }
     },
@@ -34,14 +72,18 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇮🇷 IR 01 - xiaohe"
+        "🇮🇷 IR 01 - xiaohe",
+        "🇮🇷 IR 02 - xiaohe",
+        "🇮🇷 IR 03 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇮🇷 IR 01 - xiaohe"
+        "🇮🇷 IR 01 - xiaohe",
+        "🇮🇷 IR 02 - xiaohe",
+        "🇮🇷 IR 03 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
