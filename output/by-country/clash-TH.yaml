@@ -15,10 +15,10 @@ proxies:
     public-key: LklWoqMQz_TWiuLCUNRwHAKX1adVRSGMhtbo98fbDxw
     short-id: ca672c53fbbac555
   servername: www.cloudflare.com
-  client-fingerprint: firefox
+  client-fingerprint: chrome
 - name: 🇹🇭 泰国 (Thailand) 02 - xiaohe
-  server: 122.10.119.252
-  port: 443
+  server: 152.70.76.104
+  port: 46000
   udp: true
   type: vless
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
@@ -28,7 +28,7 @@ proxies:
   client-fingerprint: chrome
   network: ws
   ws-opts:
-    path: /photos/avatar/redirect?ed=2560
+    path: /
     headers:
       Host: cdn8848.776676.xyz
 proxy-groups:
