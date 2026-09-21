@@ -24,20 +24,15 @@
       }
     },
     {
-      "type": "vmess",
+      "type": "anytls",
       "tag": "🇹🇼 中国台湾 (Taiwan) 02 (家宽) - xiaohe",
-      "server": "dee2309db4se3g5sds35g4s3dg.oylfmxz.cn",
+      "server": "6ivh.pnuqcnp.cn",
       "server_port": 443,
-      "uuid": "d90e4077-bc7e-414d-a650-70bf1baae4d6",
-      "security": "auto",
+      "password": "9sK2mP8xQ7vL3nZ6",
       "tls": {
         "enabled": true,
-        "server_name": "dee2309db4se3g5sds35g4s3dg.oylfmxz.cn",
-        "insecure": false
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
+        "server_name": "images.ctfassets.net",
+        "insecure": true
       }
     },
     {
@@ -54,7 +49,10 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/"
+        "path": "/",
+        "headers": {
+          "Host": "dee2309db4se3grs6e8hg4w61sd53g1.oylfmxz.cn"
+        }
       }
     },
     {
