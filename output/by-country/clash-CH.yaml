@@ -32,18 +32,13 @@ proxies:
     headers:
       Host: netlivpn2584.vjvdgbc.workers.dev
 - name: 🇨🇭 瑞士 (Switzerland) 03 - xiaohe
-  server: 179.43.162.252
-  port: 443
+  server: 82.38.64.229
+  port: 8443
   udp: true
-  type: vless
-  uuid: ddf09ad0-02dc-485b-9048-1038de5bebf0
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: lYVz8iVZI2XjTCw_XS9wi08P1DLXO0c7jQo-_xyw2xY
-    short-id: 9d84de9d9f7b85e9
-  servername: ch.cache-4d8a.com
-  client-fingerprint: firefox
+  type: hysteria2
+  password: we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH
+  sni: hopp-swizland-new.mysynology.net
+  skip-cert-verify: true
 - name: 🇨🇭 瑞士 (Switzerland) 04 - xiaohe
   server: 151.242.2.81
   port: 443
@@ -53,6 +48,7 @@ proxies:
   tls: true
   servername: cf9.rumedia-cdn.com
   skip-cert-verify: false
+  client-fingerprint: qq
   network: ws
   ws-opts:
     path: /cdn/v3/live
