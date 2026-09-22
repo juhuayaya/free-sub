@@ -5,14 +5,16 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇿 捷克 (Czech) 01 - xiaohe
-  server: 153.76.185.86
-  port: 3090
+  server: 104.21.16.123
+  port: 443
   udp: true
-  type: vless
-  uuid: 5bcba788-5e2d-457b-8bd2-67fa99e49e0f
-  network: grpc
-  grpc-opts:
-    grpc-service-name: vless
+  type: trojan
+  password: Telegram_healer_config
+  sni: 7x7o3vtq5z6ymu3hv1fh-op9blt.hya6losm6lznoxhm6w3mk.workers.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /tr/qL8YIeH28wNcXfNTPgLCwOhNFEr?ed=2560
 - name: 🇨🇿 捷克 (Czech) 02 - xiaohe
   server: 95.182.94.186
   port: 443
