@@ -16,28 +16,8 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "🇮🇳 印度 (India) 02 - xiaohe",
-      "server": "194.61.31.126",
-      "server_port": 2053,
-      "uuid": "1d4e18bd-1f26-4915-b35a-7ace4826e76a",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.apple.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU",
-          "short_id": "9980e0609b0d3891"
-        }
-      }
-    },
-    {
       "type": "hysteria2",
-      "tag": "🇮🇳 印度 (India) 03 - xiaohe",
+      "tag": "🇮🇳 印度 (India) 02 - xiaohe",
       "server": "13.207.151.141",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
@@ -49,7 +29,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇮🇳 印度 (India) 04 - xiaohe",
+      "tag": "🇮🇳 印度 (India) 03 - xiaohe",
       "server": "34.47.245.203",
       "server_port": 443,
       "uuid": "3fed34dc-2fe6-4fe0-86e7-a80213f9b7cc",
@@ -69,13 +49,13 @@
     },
     {
       "type": "trojan",
-      "tag": "🇮🇳 印度 (India) 05 - xiaohe",
-      "server": "tttyder.wsone.icu",
+      "tag": "🇮🇳 印度 (India) 04 - xiaohe",
+      "server": "hyfuuf6.wsone.icu",
       "server_port": 443,
       "password": "M7v%w11Se*",
       "tls": {
         "enabled": true,
-        "server_name": "tttyder.wsone.icu",
+        "server_name": "hyfuuf6.wsone.icu",
         "insecure": false,
         "utls": {
           "enabled": true,
@@ -84,14 +64,34 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "🇮🇳 印度 (India) 05 - xiaohe",
+      "server": "194.61.31.126",
+      "server_port": 2053,
+      "uuid": "1d4e18bd-1f26-4915-b35a-7ace4826e76a",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU",
+          "short_id": "9980e0609b0d3891"
+        }
+      }
+    },
+    {
       "type": "trojan",
       "tag": "🇮🇳 印度 (India) 06 - xiaohe",
-      "server": "hyfuuf6.wsone.icu",
+      "server": "tttyder.wsone.icu",
       "server_port": 443,
       "password": "M7v%w11Se*",
       "tls": {
         "enabled": true,
-        "server_name": "hyfuuf6.wsone.icu",
+        "server_name": "tttyder.wsone.icu",
         "insecure": false,
         "utls": {
           "enabled": true,
