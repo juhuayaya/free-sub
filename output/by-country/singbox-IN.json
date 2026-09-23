@@ -6,7 +6,7 @@
     {
       "type": "hysteria2",
       "tag": "🇮🇳 印度 (India) 01 - xiaohe",
-      "server": "13.207.151.141",
+      "server": "35.154.58.87",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
       "tls": {
@@ -38,7 +38,7 @@
     {
       "type": "hysteria2",
       "tag": "🇮🇳 印度 (India) 03 - xiaohe",
-      "server": "35.154.58.87",
+      "server": "13.207.151.141",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
       "tls": {
@@ -48,45 +48,8 @@
       }
     },
     {
-      "type": "trojan",
+      "type": "vless",
       "tag": "🇮🇳 印度 (India) 04 - xiaohe",
-      "server": "tttyder.wsone.icu",
-      "server_port": 443,
-      "password": "M7v%w11Se*",
-      "tls": {
-        "enabled": true,
-        "server_name": "tttyder.wsone.icu",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇳 印度 (India) 05 - xiaohe",
-      "server": "148.113.5.44",
-      "server_port": 443,
-      "uuid": "72ea5a91-ffcc-43d2-9297-5993c3abf186",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "QLjTpkXRB453R9fXhJzKkc_q_gSm2MZrIOuxW4uW-mI",
-          "short_id": "221873918e0bb74d"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇳 印度 (India) 06 - xiaohe",
       "server": "34.47.245.203",
       "server_port": 443,
       "uuid": "3fed34dc-2fe6-4fe0-86e7-a80213f9b7cc",
@@ -106,7 +69,23 @@
     },
     {
       "type": "trojan",
-      "tag": "🇮🇳 印度 (India) 07 - xiaohe",
+      "tag": "🇮🇳 印度 (India) 05 - xiaohe",
+      "server": "tttyder.wsone.icu",
+      "server_port": 443,
+      "password": "M7v%w11Se*",
+      "tls": {
+        "enabled": true,
+        "server_name": "tttyder.wsone.icu",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇮🇳 印度 (India) 06 - xiaohe",
       "server": "hyfuuf6.wsone.icu",
       "server_port": 443,
       "password": "M7v%w11Se*",
@@ -117,6 +96,27 @@
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇳 印度 (India) 07 - xiaohe",
+      "server": "148.113.5.44",
+      "server_port": 443,
+      "uuid": "72ea5a91-ffcc-43d2-9297-5993c3abf186",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cloudflare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "QLjTpkXRB453R9fXhJzKkc_q_gSm2MZrIOuxW4uW-mI",
+          "short_id": "221873918e0bb74d"
         }
       }
     },
