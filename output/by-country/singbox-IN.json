@@ -4,14 +4,15 @@
   },
   "outbounds": [
     {
-      "type": "vmess",
+      "type": "hysteria2",
       "tag": "🇮🇳 印度 (India) 01 - xiaohe",
-      "server": "152.67.8.205",
-      "server_port": 80,
-      "uuid": "9db4c708-aef8-4359-821b-38e47990be0d",
-      "security": "auto",
-      "transport": {
-        "type": "ws"
+      "server": "13.207.151.141",
+      "server_port": 443,
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpn-in-001.fastervpn.world",
+        "insecure": true
       }
     },
     {
@@ -25,7 +26,7 @@
         "server_name": "www.apple.com",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         },
         "reality": {
           "enabled": true,
@@ -47,15 +48,19 @@
       }
     },
     {
-      "type": "hysteria2",
+      "type": "trojan",
       "tag": "🇮🇳 印度 (India) 04 - xiaohe",
-      "server": "vpn-in-001.fastervpn.world",
+      "server": "tttyder.wsone.icu",
       "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "password": "M7v%w11Se*",
       "tls": {
         "enabled": true,
-        "server_name": "css.rbxcdn.com",
-        "insecure": true
+        "server_name": "tttyder.wsone.icu",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       }
     },
     {
@@ -102,22 +107,6 @@
     {
       "type": "trojan",
       "tag": "🇮🇳 印度 (India) 07 - xiaohe",
-      "server": "tttyder.wsone.icu",
-      "server_port": 443,
-      "password": "M7v%w11Se*",
-      "tls": {
-        "enabled": true,
-        "server_name": "tttyder.wsone.icu",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇮🇳 印度 (India) 08 - xiaohe",
       "server": "hyfuuf6.wsone.icu",
       "server_port": 443,
       "password": "M7v%w11Se*",
@@ -142,8 +131,7 @@
         "🇮🇳 印度 (India) 04 - xiaohe",
         "🇮🇳 印度 (India) 05 - xiaohe",
         "🇮🇳 印度 (India) 06 - xiaohe",
-        "🇮🇳 印度 (India) 07 - xiaohe",
-        "🇮🇳 印度 (India) 08 - xiaohe"
+        "🇮🇳 印度 (India) 07 - xiaohe"
       ]
     },
     {
@@ -156,8 +144,7 @@
         "🇮🇳 印度 (India) 04 - xiaohe",
         "🇮🇳 印度 (India) 05 - xiaohe",
         "🇮🇳 印度 (India) 06 - xiaohe",
-        "🇮🇳 印度 (India) 07 - xiaohe",
-        "🇮🇳 印度 (India) 08 - xiaohe"
+        "🇮🇳 印度 (India) 07 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
