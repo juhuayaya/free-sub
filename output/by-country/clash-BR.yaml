@@ -15,7 +15,7 @@ proxies:
     public-key: 0WXz3PJQnr-KprrwiO5BlKVRdqA4ZS6U5jGHc_aeJnw
     short-id: 4b414f69a06e1e81
   servername: www.cloudflare.com
-  client-fingerprint: edge
+  client-fingerprint: ios
 - name: 🇧🇷 巴西 (Brazil) 02 - xiaohe
   server: 172.233.14.17
   port: 22324
