@@ -18,6 +18,44 @@ proxies:
   grpc-opts:
     grpc-service-name: cdn.v1.AssetService
 - name: 🇫🇮 芬兰 (Finland) 02 - xiaohe
+  server: 37.143.129.244
+  port: 443
+  udp: true
+  type: vless
+  uuid: 0e6de971-69e8-4536-b06d-8b6eae57021b
+  flow: xtls-rprx-vision
+  tls: true
+  reality-opts:
+    public-key: 5HArul2NDXfFUxijHj1xiPCfH-77zuuRxylT1vWIvUY
+    short-id: 48fd192dc4e46bc0
+  servername: gateway.icloud.com
+  client-fingerprint: chrome
+- name: 🇫🇮 芬兰 (Finland) 03 - xiaohe
+  server: 31.77.199.147
+  port: 4443
+  udp: true
+  type: vless
+  uuid: 20dd9433-389e-4573-ba7b-689619cf13da
+  flow: xtls-rprx-vision
+  tls: true
+  reality-opts:
+    public-key: GvkQwcZWiXQBLzEhTVfQkyPpdgo6Opc3RtLsED9sA0A
+    short-id: 7da2eae792187ab9
+  servername: images.unsplash.com
+  client-fingerprint: chrome
+- name: 🇫🇮 芬兰 (Finland) 04 - xiaohe
+  server: 95.216.27.15
+  port: 2053
+  udp: true
+  type: vless
+  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
+  tls: true
+  reality-opts:
+    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
+    short-id: d368b94e275ab080
+  servername: www.google.com
+  client-fingerprint: ''
+- name: 🇫🇮 芬兰 (Finland) 05 - xiaohe
   server: 185.79.138.71
   port: 448
   udp: true
@@ -29,7 +67,18 @@ proxies:
     short-id: cd21e552537c7c0b
   servername: www.samsung.com
   client-fingerprint: chrome
-- name: 🇫🇮 芬兰 (Finland) 03 - xiaohe
+- name: 🇫🇮 芬兰 (Finland) 06 - xiaohe
+  server: fi.snobvpn.online
+  port: 80
+  udp: true
+  type: vless
+  uuid: 246b101b-4e4a-451f-8e9c-5e8d3b64b4ef
+  network: ws
+  ws-opts:
+    path: /snob-ws
+    headers:
+      Host: fi.snobvpn.online
+- name: 🇫🇮 芬兰 (Finland) 07 - xiaohe
   server: est1313.ggisopi.su
   port: 443
   udp: true
@@ -41,7 +90,7 @@ proxies:
     public-key: SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I
   servername: est1313.ggisopi.su
   client-fingerprint: chrome
-- name: 🇫🇮 芬兰 (Finland) 04 - xiaohe
+- name: 🇫🇮 芬兰 (Finland) 08 - xiaohe
   server: iq5ny.pleiades.codes
   port: 8443
   udp: true
@@ -49,6 +98,21 @@ proxies:
   password: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
   sni: iq5ny.pleiades.codes
   skip-cert-verify: true
+- name: 🇫🇮 芬兰 (Finland) 09 - xiaohe
+  server: 212.193.18.183
+  port: 8446
+  udp: true
+  type: vless
+  uuid: 246b101b-4e4a-451f-8e9c-5e8d3b64b4ef
+  tls: true
+  reality-opts:
+    public-key: f6xhmL1XqUJ4zdkaDsh9GuEyXc0JXM2Dp5KwU8VHb0c
+    short-id: 7f8e9d0c1b2a
+  servername: maps.apple.com
+  client-fingerprint: firefox
+  network: grpc
+  grpc-opts:
+    grpc-service-name: snob-grpc
 proxy-groups:
 - name: PROXIES
   type: select
@@ -58,6 +122,11 @@ proxy-groups:
   - 🇫🇮 芬兰 (Finland) 02 - xiaohe
   - 🇫🇮 芬兰 (Finland) 03 - xiaohe
   - 🇫🇮 芬兰 (Finland) 04 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 05 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 06 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 07 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 08 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 09 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -67,5 +136,10 @@ proxy-groups:
   - 🇫🇮 芬兰 (Finland) 02 - xiaohe
   - 🇫🇮 芬兰 (Finland) 03 - xiaohe
   - 🇫🇮 芬兰 (Finland) 04 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 05 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 06 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 07 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 08 - xiaohe
+  - 🇫🇮 芬兰 (Finland) 09 - xiaohe
 rules:
 - MATCH,PROXIES
