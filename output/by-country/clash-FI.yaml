@@ -13,6 +13,7 @@ proxies:
   tls: true
   servername: assets-fi.pleiades.codes
   skip-cert-verify: false
+  client-fingerprint: firefox
   network: grpc
   grpc-opts:
     grpc-service-name: cdn.v1.AssetService
@@ -29,22 +30,6 @@ proxies:
   servername: www.samsung.com
   client-fingerprint: chrome
 - name: 🇫🇮 芬兰 (Finland) 03 - xiaohe
-  server: de.i-love-russia.online
-  port: 443
-  udp: true
-  type: hysteria2
-  password: a6cf39b3-0424-42a2-abf7-b426da69b1a4
-  sni: de.i-love-russia.online
-  skip-cert-verify: false
-- name: 🇫🇮 芬兰 (Finland) 04 - xiaohe
-  server: iq5ny.pleiades.codes
-  port: 8443
-  udp: true
-  type: hysteria2
-  password: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
-  sni: iq5ny.pleiades.codes
-  skip-cert-verify: true
-- name: 🇫🇮 芬兰 (Finland) 05 - xiaohe
   server: est1313.ggisopi.su
   port: 443
   udp: true
@@ -56,19 +41,14 @@ proxies:
     public-key: SB1uC0OEveYjSiS_Nuw9Ld-uVVXWqi794OGnldthY3I
   servername: est1313.ggisopi.su
   client-fingerprint: chrome
-- name: 🇫🇮 芬兰 (Finland) 06 - xiaohe
-  server: fintanil228.vvzzkontaktezzvv.garden
-  port: 443
+- name: 🇫🇮 芬兰 (Finland) 04 - xiaohe
+  server: iq5ny.pleiades.codes
+  port: 8443
   udp: true
-  type: vless
-  uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: YBKHp6R7xp2Ss2kxbvDNMFPpRrf3oh1wQ2dVMukPHmA
-    short-id: d110331f200987ae
-  servername: fintanil228.vvzzkontaktezzvv.garden
-  client-fingerprint: edge
+  type: hysteria2
+  password: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+  sni: iq5ny.pleiades.codes
+  skip-cert-verify: true
 proxy-groups:
 - name: PROXIES
   type: select
@@ -78,8 +58,6 @@ proxy-groups:
   - 🇫🇮 芬兰 (Finland) 02 - xiaohe
   - 🇫🇮 芬兰 (Finland) 03 - xiaohe
   - 🇫🇮 芬兰 (Finland) 04 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 05 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 06 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -89,7 +67,5 @@ proxy-groups:
   - 🇫🇮 芬兰 (Finland) 02 - xiaohe
   - 🇫🇮 芬兰 (Finland) 03 - xiaohe
   - 🇫🇮 芬兰 (Finland) 04 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 05 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 06 - xiaohe
 rules:
 - MATCH,PROXIES
