@@ -41,6 +41,14 @@ proxies:
   servername: est1313.ggisopi.su
   client-fingerprint: chrome
 - name: 🇫🇮 芬兰 (Finland) 04 - xiaohe
+  server: me6.movieseryalirani.ir
+  port: 57361
+  udp: true
+  type: vmess
+  uuid: ed815caa-bff1-4419-8c61-1d108eabaf1f
+  alterId: 0
+  cipher: auto
+- name: 🇫🇮 芬兰 (Finland) 05 - xiaohe
   server: a2.arshia-nova.ir
   port: 443
   udp: true
@@ -55,14 +63,6 @@ proxies:
     path: /
     headers:
       Host: c12.com
-- name: 🇫🇮 芬兰 (Finland) 05 - xiaohe
-  server: me6.movieseryalirani.ir
-  port: 57361
-  udp: true
-  type: vmess
-  uuid: ed815caa-bff1-4419-8c61-1d108eabaf1f
-  alterId: 0
-  cipher: auto
 - name: 🇫🇮 芬兰 (Finland) 06 - xiaohe
   server: me1.movieseryalirani.ir
   port: 443
