@@ -13,7 +13,7 @@ proxies:
   tls: true
   servername: yf.962456.xyz
   skip-cert-verify: false
-  client-fingerprint: random
+  client-fingerprint: qq
   network: ws
   ws-opts:
     path: /proxyip=kr.william.us.ci
