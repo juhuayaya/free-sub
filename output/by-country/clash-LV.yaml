@@ -6,11 +6,11 @@ log-level: info
 proxies:
 - name: 🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe
   server: 185.135.86.175
-  port: 9007
+  port: 9033
   udp: true
   type: ss
   cipher: aes-256-cfb
-  password: kSPmvwdFzGMMW5pY
+  password: UTJA57ypk2XKQpnm
 proxy-groups:
 - name: PROXIES
   type: select

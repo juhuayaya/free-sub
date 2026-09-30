@@ -43,32 +43,20 @@ proxies:
   servername: www.samsung.com
   client-fingerprint: chrome
 - name: 🇫🇮 芬兰 (Finland) 04 - xiaohe
-  server: 2.27.13.61
-  port: 2096
+  server: 45.144.179.225
+  port: 8444
   udp: true
   type: vless
-  uuid: 11d826ce-d6e5-4154-8658-6829bb17dca2
-  tls: true
-  servername: st6dbbc.rumedia-cdn.com
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /cdn/v3/live
-    headers:
-      Host: st6dbbc.rumedia-cdn.com
-- name: 🇫🇮 芬兰 (Finland) 05 - xiaohe
-  server: 95.216.27.15
-  port: 2053
-  udp: true
-  type: vless
-  uuid: 1c81f6d3-5771-4c5d-9fdd-1655eff50634
+  uuid: 2bca4849-d000-4e92-bb53-574edc5a4355
   tls: true
   reality-opts:
-    public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
-    short-id: d368b94e275ab080
-  servername: www.google.com
+    public-key: 39DW91UjCxZi3ZaGWKfTLmQSvcc34PQXZFU26WSzxww
+    short-id: 1a7e154c
+  servername: falngl.lindenwork.com
   client-fingerprint: firefox
+  network: grpc
+  grpc-opts:
+    grpc-service-name: vk.com
 proxy-groups:
 - name: PROXIES
   type: select
@@ -78,7 +66,6 @@ proxy-groups:
   - 🇫🇮 芬兰 (Finland) 02 - xiaohe
   - 🇫🇮 芬兰 (Finland) 03 - xiaohe
   - 🇫🇮 芬兰 (Finland) 04 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 05 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -88,6 +75,5 @@ proxy-groups:
   - 🇫🇮 芬兰 (Finland) 02 - xiaohe
   - 🇫🇮 芬兰 (Finland) 03 - xiaohe
   - 🇫🇮 芬兰 (Finland) 04 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 05 - xiaohe
 rules:
 - MATCH,PROXIES
