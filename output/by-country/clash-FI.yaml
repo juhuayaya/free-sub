@@ -5,30 +5,29 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇫🇮 芬兰 (Finland) 01 - xiaohe
-  server: 204.168.147.195
-  port: 1085
-  udp: true
-  type: vless
-  uuid: 0c1b7949-fe09-43d9-863f-2c031f66bfc1
-- name: 🇫🇮 芬兰 (Finland) 02 - xiaohe
-  server: 77.42.20.51
-  port: 1085
-  udp: true
-  type: vless
-  uuid: 0c1b7949-fe09-43d9-863f-2c031f66bfc1
-- name: 🇫🇮 芬兰 (Finland) 03 - xiaohe
-  server: 212.147.245.198
+  server: 144.31.232.216
   port: 443
   udp: true
-  type: vless
-  uuid: 042d2d08-2973-5d10-97ad-3b75f16bbe54
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: xwLNHc6jBOg5Ddr1LezwY7I45nP485Qfu1YJXMKwVnI
-    short-id: 330a464a00000000
-  servername: online.1c.ru
-  client-fingerprint: ''
+  type: hysteria2
+  password: 06e88dd6-e264-4981-8c26-d7ab17348ab2
+  sni: fi01.clgate.network
+  skip-cert-verify: false
+- name: 🇫🇮 芬兰 (Finland) 02 - xiaohe
+  server: 87.251.17.11
+  port: 9443
+  udp: true
+  type: hysteria2
+  password: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
+  sni: onecloudstream.com
+  skip-cert-verify: true
+- name: 🇫🇮 芬兰 (Finland) 03 - xiaohe
+  server: 144.31.212.253
+  port: 443
+  udp: true
+  type: hysteria2
+  password: cf83b611-6cba-4535-adcb-8da06c6a9146
+  sni: vps155-edge.kermemehori.ru
+  skip-cert-verify: true
 - name: 🇫🇮 芬兰 (Finland) 04 - xiaohe
   server: 35.228.61.63
   port: 443
@@ -42,13 +41,11 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: safari
 - name: 🇫🇮 芬兰 (Finland) 05 - xiaohe
-  server: 144.31.212.253
-  port: 443
+  server: 77.42.20.51
+  port: 1085
   udp: true
-  type: hysteria2
-  password: cf83b611-6cba-4535-adcb-8da06c6a9146
-  sni: vps155-edge.kermemehori.ru
-  skip-cert-verify: false
+  type: vless
+  uuid: 0c1b7949-fe09-43d9-863f-2c031f66bfc1
 proxy-groups:
 - name: PROXIES
   type: select
