@@ -30,6 +30,18 @@ proxies:
   udp: true
   type: vless
   uuid: 9f0285ee-20ca-4953-bcdb-86a920652923
+- name: 🇮🇹 意大利 (Italy) 04 - xiaohe
+  server: 34.154.251.151
+  port: 443
+  udp: true
+  type: vless
+  uuid: 4d4bfd21-88fc-4de7-87bd-c2ddaedc4078
+  tls: true
+  reality-opts:
+    public-key: jGfJxbIyf2aLRFQyT9NsJBu1CzJmrAa2sF19GNw46z8
+    short-id: 29615707650b941d
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
 proxy-groups:
 - name: PROXIES
   type: select
@@ -38,6 +50,7 @@ proxy-groups:
   - 🇮🇹 意大利 (Italy) 01 - xiaohe
   - 🇮🇹 意大利 (Italy) 02 - xiaohe
   - 🇮🇹 意大利 (Italy) 03 - xiaohe
+  - 🇮🇹 意大利 (Italy) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -46,5 +59,6 @@ proxy-groups:
   - 🇮🇹 意大利 (Italy) 01 - xiaohe
   - 🇮🇹 意大利 (Italy) 02 - xiaohe
   - 🇮🇹 意大利 (Italy) 03 - xiaohe
+  - 🇮🇹 意大利 (Italy) 04 - xiaohe
 rules:
 - MATCH,PROXIES
