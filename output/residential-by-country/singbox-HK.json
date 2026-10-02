@@ -6,36 +6,24 @@
     {
       "type": "hysteria2",
       "tag": "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
-      "server": "2193972c-tmkao0-u1vxv2-v3c2.hk3.hyhuawei.com",
+      "server": "c3cbc163-tmm5c0-tpkh0c-1r7od.hk3.hyhuawei.com",
       "server_port": 443,
-      "password": "5f091cbe-fb34-11ea-9777-f23c9164ca5d",
+      "password": "6d56436c-150d-11f0-b0c8-f23c913c8d2b",
       "tls": {
         "enabled": true,
-        "server_name": "2193972c-tmkao0-u1vxv2-v3c2.hk3.hyhuawei.com",
+        "server_name": "c3cbc163-tmm5c0-tpkh0c-1r7od.hk3.hyhuawei.com",
         "insecure": true
       }
     },
     {
       "type": "hysteria2",
       "tag": "🇭🇰 中国香港 (Hong Kong) 02 (家宽) - xiaohe",
-      "server": "0499fc3f-tmkao0-tnnrly-g43g.nw4.hyhuawei.com",
+      "server": "59c70bb8-tmm5c0-txfm0f-1qxa1.nw4.hyhuawei.com",
       "server_port": 443,
-      "password": "6ddb6a68-d5f5-ca30-3943-cf0c9876d50c",
+      "password": "f609abb4-ed17-11ee-9fa2-f23c9164ca5d",
       "tls": {
         "enabled": true,
-        "server_name": "0499fc3f-tmkao0-tnnrly-g43g.nw4.hyhuawei.com",
-        "insecure": true
-      }
-    },
-    {
-      "type": "anytls",
-      "tag": "🇭🇰 中国香港 (Hong Kong) 03 (家宽) - xiaohe",
-      "server": "ac7548f3ebe045b39a90288ff1e97528.pnuqcnp.cn",
-      "server_port": 443,
-      "password": "9sK2mP8xQ7vL3nZ6",
-      "tls": {
-        "enabled": true,
-        "server_name": "ac7548f3ebe045b39a90288ff1e97528.lwdnxf.cn",
+        "server_name": "59c70bb8-tmm5c0-txfm0f-1qxa1.nw4.hyhuawei.com",
         "insecure": true
       }
     },
@@ -45,8 +33,7 @@
       "outbounds": [
         "auto",
         "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
-        "🇭🇰 中国香港 (Hong Kong) 02 (家宽) - xiaohe",
-        "🇭🇰 中国香港 (Hong Kong) 03 (家宽) - xiaohe"
+        "🇭🇰 中国香港 (Hong Kong) 02 (家宽) - xiaohe"
       ]
     },
     {
@@ -54,8 +41,7 @@
       "tag": "auto",
       "outbounds": [
         "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
-        "🇭🇰 中国香港 (Hong Kong) 02 (家宽) - xiaohe",
-        "🇭🇰 中国香港 (Hong Kong) 03 (家宽) - xiaohe"
+        "🇭🇰 中国香港 (Hong Kong) 02 (家宽) - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
