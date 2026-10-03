@@ -6,6 +6,27 @@
     {
       "type": "vless",
       "tag": "🇮🇩 印尼 (Indonesia) 01 - xiaohe",
+      "server": "103.172.197.2",
+      "server_port": 29172,
+      "uuid": "3977434d-6a9b-4858-8ced-80326ba5e367",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "aws.amazon.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "pff94OJwuKXnF7_3SJ8KKJuAN4GJtInBlR-kg-4mwzQ",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇩 印尼 (Indonesia) 02 - xiaohe",
       "server": "103.172.197.3",
       "server_port": 16006,
       "uuid": "f8c9d2a1-da40-4f90-b671-11772a0b13d6",
@@ -26,7 +47,7 @@
     },
     {
       "type": "trojan",
-      "tag": "🇮🇩 印尼 (Indonesia) 02 - xiaohe",
+      "tag": "🇮🇩 印尼 (Indonesia) 03 - xiaohe",
       "server": "188.114.97.6",
       "server_port": 443,
       "password": "018b8e7b-7813-4dcb-84a5-3c98f1521e00",
@@ -44,12 +65,34 @@
       }
     },
     {
+      "type": "vmess",
+      "tag": "🇮🇩 印尼 (Indonesia) 04 - xiaohe",
+      "server": "JktuSpfnIaKnawgK.v.3dns.vip",
+      "server_port": 443,
+      "uuid": "9b31490d-190e-4ef1-af0a-7ccab3e7c3b5",
+      "security": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "JktuSpfnIaKnawgK.v.3dns.vip",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ws-vmess",
+        "headers": {
+          "Host": "JktuSpfnIaKnawgK.v.3dns.vip"
+        }
+      }
+    },
+    {
       "type": "selector",
       "tag": "select",
       "outbounds": [
         "auto",
         "🇮🇩 印尼 (Indonesia) 01 - xiaohe",
-        "🇮🇩 印尼 (Indonesia) 02 - xiaohe"
+        "🇮🇩 印尼 (Indonesia) 02 - xiaohe",
+        "🇮🇩 印尼 (Indonesia) 03 - xiaohe",
+        "🇮🇩 印尼 (Indonesia) 04 - xiaohe"
       ]
     },
     {
@@ -57,7 +100,9 @@
       "tag": "auto",
       "outbounds": [
         "🇮🇩 印尼 (Indonesia) 01 - xiaohe",
-        "🇮🇩 印尼 (Indonesia) 02 - xiaohe"
+        "🇮🇩 印尼 (Indonesia) 02 - xiaohe",
+        "🇮🇩 印尼 (Indonesia) 03 - xiaohe",
+        "🇮🇩 印尼 (Indonesia) 04 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
