@@ -15,7 +15,7 @@ proxies:
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
 - name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
-  server: admin.wwwinternetvideo.click
+  server: go.wwwinternetvideo.click
   port: 443
   udp: true
   type: hysteria2
