@@ -4,21 +4,17 @@
   },
   "outbounds": [
     {
-      "type": "vless",
-      "tag": "🇬🇪 格鲁吉亚 (Georgia) 01 - xiaohe",
-      "server": "172.67.159.161",
-      "server_port": 443,
-      "uuid": "76ac91c5-ea82-4046-8ee7-2ffbb563ac94",
-      "tls": {
-        "enabled": true,
-        "server_name": "geo.shkola112.site",
-        "insecure": false
-      },
+      "type": "vmess",
+      "tag": "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe",
+      "server": "38.107.234.57",
+      "server_port": 80,
+      "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
+      "security": "auto",
       "transport": {
         "type": "ws",
-        "path": "/api-vless",
+        "path": "/vmess/",
         "headers": {
-          "Host": "geo.shkola112.site"
+          "Host": "38.107.234.57"
         }
       }
     },
@@ -27,14 +23,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇬🇪 格鲁吉亚 (Georgia) 01 - xiaohe"
+        "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇬🇪 格鲁吉亚 (Georgia) 01 - xiaohe"
+        "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
