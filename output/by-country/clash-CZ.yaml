@@ -4,27 +4,25 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇦🇺 澳大利亚 (Australia) 01 - xiaohe
-  server: 159.13.42.167
-  port: 20000
+- name: 🇨🇿 捷克 (Czech) 01 - xiaohe
+  server: cz.h2.cleanersaz.help
+  port: 443
   udp: true
   type: hysteria2
-  password: b42d90fa667942aebc734d60
-  sni: rmgyvpn.rest
+  password: c-E0lamG8OnEj9M_uh3oJPmIXqYIVGctO-NHELF1TmNYs7Jl
+  sni: cz.h2.cleanersaz.help
   skip-cert-verify: true
-  obfs: salamander
-  obfs-password: b42d90fa667942aebc734d60
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇦🇺 澳大利亚 (Australia) 01 - xiaohe
+  - 🇨🇿 捷克 (Czech) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇦🇺 澳大利亚 (Australia) 01 - xiaohe
+  - 🇨🇿 捷克 (Czech) 01 - xiaohe
 rules:
 - MATCH,PROXIES
