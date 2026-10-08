@@ -5,13 +5,12 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇪🇸 西班牙 (Spain) 01 - xiaohe
-  server: 185.174.137.172
-  port: 8446
+  server: 5.188.181.201
+  port: 9025
   udp: true
-  type: hysteria2
-  password: e9dc02d400b67c727aca1620
-  sni: 185.174.137.172
-  skip-cert-verify: true
+  type: ss
+  cipher: aes-256-cfb
+  password: XPtzA9sCug3SPR4c
 - name: 🇪🇸 西班牙 (Spain) 02 - xiaohe
   server: 108.181.121.226
   port: 8388
@@ -32,18 +31,13 @@ proxies:
   servername: www.apple.com
   client-fingerprint: chrome
 - name: 🇪🇸 西班牙 (Spain) 04 - xiaohe
-  server: 46.28.71.247
-  port: 443
+  server: 185.174.137.172
+  port: 8446
   udp: true
-  type: vless
-  uuid: 12c53e32-e589-47d6-b857-e4132294f767
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE
-    short-id: 0dfc23fe80778c00
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
+  type: hysteria2
+  password: e9dc02d400b67c727aca1620
+  sni: 185.174.137.172
+  skip-cert-verify: true
 proxy-groups:
 - name: PROXIES
   type: select

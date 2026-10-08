@@ -4,17 +4,16 @@
   },
   "outbounds": [
     {
-      "type": "vmess",
-      "tag": "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe",
-      "server": "38.107.234.57",
+      "type": "vless",
+      "tag": "🇲🇾 马来西亚 (Malaysia) 01 - xiaohe",
+      "server": "platform102.golnamakcert.top",
       "server_port": 80,
-      "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
-      "security": "auto",
+      "uuid": "e13cf851-b4fd-413b-8d49-146e6eb8e5d4",
       "transport": {
         "type": "ws",
-        "path": "/vmess/",
+        "path": "/platform102",
         "headers": {
-          "Host": "38.107.234.57"
+          "Host": "platform102.golnamakcert.top"
         }
       }
     },
@@ -23,14 +22,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe"
+        "🇲🇾 马来西亚 (Malaysia) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe"
+        "🇲🇾 马来西亚 (Malaysia) 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
